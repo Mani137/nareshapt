@@ -1,0 +1,81 @@
+
+
+mat-toolbar{
+    color:primary;
+    background-color: rgb(240, 150, 109);
+    
+}
+mat-sidenav{
+    background-color: rgb(16, 17, 36);
+    padding:5px 20px;
+}
+img{
+    width:70px;
+    float: left;
+}
+.nav-button{
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    color:rgb(2, 1, 8)
+   
+}
+*{
+    margin: 0%;
+    padding: 0%;
+   
+    font-weight: 50;
+    font-size: 20px;
+}
+
+.container{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+mat-icon{
+    color: rgb(240, 244, 247);
+}
+mat-nav-list a{
+    color: rgb(236, 239, 241);
+    text-decoration: none;
+}
+
+.container {
+   
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+/* Adjust the height as needed */
+    
+  }
+  
+  .row{
+    position: relative;
+    bottom: 60px;
+  }
+  .header{
+    position: relative;
+    top: 20px;
+  }
+
+  button{
+    font-style: italic;
+    font-weight: 50;
+    font-size: 20px;
+  }    
+  /* Add hover effect to mat-nav-list items */
+mat-nav-list a:hover {
+    
+    /* background-color: #a8a9aa;  */
+    color: #c0a0a0; /* Apply the desired text color on hover */
+    /* Add any other desired styles for hover effect */
+  }
+  
+
+  .fixed-toolbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Adjust the z-index value as needed */
+  }
+

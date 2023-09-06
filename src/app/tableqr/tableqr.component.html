@@ -1,0 +1,25 @@
+
+
+
+  <mat-dialog-content>
+    <div class="row row-1">
+      <div class="container">
+        <div class="smallContainer card col-md-12 m-6">
+          <form [formGroup]="registrationForm" class="row g-3">
+            <div class="col-md-6">
+              <label for="Business Logo" class="form-label">QR Code :</label>
+              <div class="col">
+                <img *ngIf="qrCode" [src]="getBase64Image(qrCode)" alt="QR Code" height="200px" width="200px" />
+                </div>
+                <button *ngIf="qrCode" (click)="downloadQRCode(qrCode)" class="btn btn-primary">Download</button>
+                <div mat-dialog-actions>
+                  <button mat-button mat-dialog-close>Cancel</button>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  
+  

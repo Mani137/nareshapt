@@ -1,0 +1,233 @@
+<br />
+<br />
+<br>
+<br>
+
+<div class="background-image">
+  <img
+    src="\assets\blur-restaurant.png"
+    alt="background-image"
+    class="image"
+    width="100%"
+  />
+  <br>
+  <br>
+  <div class="candi">
+    <div class="container">
+      <div class="smallContainer card col-md-6 m-6 candi">
+        <div class="containerlogo">
+          <img src="\assets\images\aptitlogo.png" alt="Logo" class="logo-image" />
+        </div>
+
+        <form action="" [formGroup]="registrationForm">
+          <h2 class="col-md-12">Registration</h2>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+           <sup class="text-danger">*</sup> Business Name :
+            </div> 
+            <div class="input col-5">
+              <input
+                type="text"
+                class="form-control"
+                id="businessName"
+                formControlName="businessName"
+              />
+              <div *ngIf="registrationForm.get('businessName')?.invalid && registrationForm.get('businessName')?.touched" class="text-danger">
+                <small>Please fill the BusinessName</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+            <sup class="text-danger">*</sup> Type of Business :
+            </div>
+            <div class="input col-5">
+              <input
+                type="text"
+                class="form-control"
+                id="typeOfBusiness"
+                formControlName="typeOfBusiness"
+              />
+              <div *ngIf="registrationForm.get('typeOfBusiness')?.invalid && registrationForm.get('typeOfBusiness')?.touched" class="text-danger">
+                <small>Please fill the typeOfBusiness.
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+         <sup class="text-danger">*</sup> Email :
+            </div>
+            <div class="input col-5">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+              />
+              <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="text-danger">
+                <small>Please fill the Email.Email  must be  have ..@gmail.com .</small>
+              </div>
+            </div>
+          </div>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+            <sup class="text-danger">*</sup> Contact Person Name :
+            </div>
+            <div class="input col-5">
+              <input
+                type="text"
+                class="form-control"
+                id="contactpersonName"
+                formControlName="contactpersonName"
+              />
+              <div *ngIf="registrationForm.get('contactpersonName')?.invalid && registrationForm.get('contactpersonName')?.touched" class="text-danger">
+                <small>Please fill the contactpersonName</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+            <sup class="text-danger">*</sup> Phone No :
+            </div>
+            <div class="input col-5">
+              <input
+                type="number"
+                class="form-control"
+                id="phoneNo"
+                formControlName="phoneNo"
+                maxlength="14"
+                pattern="[0-9]{10}"
+              />
+              <div *ngIf="registrationForm.get('phoneNo')?.invalid && registrationForm.get('phoneNo')?.touched" class="text-danger">
+                <small> please fill the valid 10 digits Phone number.</small>
+              </div>
+            </div>
+          </div>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+          <sup class="text-danger">*</sup> Address :
+            </div>
+            <div class="input col-5">
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                formControlName="address"
+              />
+              <div *ngIf="registrationForm.get('address')?.invalid && registrationForm.get('address')?.touched" class="text-danger">
+                <small>Please fill the address</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+           <sup class="text-danger">*</sup> About :
+            </div>
+            <div class="input col-5">
+              <input
+                type="text"
+                class="form-control"
+                id="about"
+                formControlName="about"
+              />
+              <div *ngIf="registrationForm.get('about')?.invalid && registrationForm.get('about')?.touched" class="text-danger">
+                <small>Please fill the about</small>
+              </div>
+            </div>
+          </div>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+            <sup class="text-danger">*</sup>  Password :
+            </div>
+            <div class="input col-5">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                formControlName="password"
+                [(ngModel)]="password"
+              />
+
+              <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="text-danger">
+                <small>Please fill the password</small>
+              </div>
+            </div>
+          </div>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+            <sup class="text-danger">*</sup> Confirm Password :
+            </div>
+            <div class="input col-5">
+              <input
+                type="password"
+                class="form-control"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                [(ngModel)]="confirmPassword"
+                (input)="checkPassword()"
+              />
+              <div *ngIf="passwordMatch" class="text-danger">
+                <small>Password doesnot Match</small>
+              </div>
+            </div>
+          </div>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+            <sup class="text-danger">*</sup> Registration Date :
+            </div>
+            <div class="input col-5">
+              <input
+                type="date"
+                class="form-control"
+                id="about"
+                formControlName="registrationDate"
+              />
+              <div *ngIf="registrationForm.get('registrationDate')?.invalid && registrationForm.get('registrationDate')?.touched" class="text-danger">
+                <small>Please fill the registrationDate</small>
+              </div>
+            </div>
+          </div>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-7">
+              <sup class="text-danger">*</sup>
+              Business Logo :</div>
+            <div class="input col-5">
+              <input
+                type="file"
+                class="form-control"
+                id="businessLogo"
+                formControlName="logo"
+                (change)="onFileSave($event)"
+              />
+              <div *ngIf="registrationForm.get('logo')?.invalid && registrationForm.get('logo')?.touched" class="text-danger">
+                <small>Please fill the logo</small>
+              </div>
+            </div>
+          </div>
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-12 button">
+              <button
+                type="button"
+                (click)="register()"
+                class="btn btn-primary"
+                [disabled]="registrationForm.invalid"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="powered-by">
+          Powered By
+          <a href="https://www.aptits.com/Home" target="_blank" rel="noreferrer"
+            >API IT Solutions</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+
+.box{
+   
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+    
+}
+
+
+.box{
+    width: 300px;
+    height: auto;
+}
+
+
+.flex-box{
+
+ margin-left:20px;
+ padding-left:auto;
+ 
+ box-shadow: 90px;
+ 
+ border-bottom: 20px;
+ justify-content: space-between;
+ color: darkblue;
+
+}
+
+.padd-left{
+
+    padding-left: 50px;
+}
+
+.padd-top{
+    padding-top: 100px;
+
+}
+
+
+
+mat-card{
+    display: inline-block;
+    
+width: 250px;
+margin-right: 20px;
+
+}

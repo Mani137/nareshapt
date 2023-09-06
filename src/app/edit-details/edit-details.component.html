@@ -1,0 +1,205 @@
+
+
+<mat-dialog-content>
+
+  <div class="row row-1">
+    <div class="container">
+      <div class="smallContainer card col-md-12 m-6">
+        <form [formGroup]="registrationForm" class="row g-3">
+            <h2 class="col-md-12">EditUserDetails</h2>
+ 
+
+          <div class="dev">
+          <div class="row col-md-12 m-1">
+            <div class="col-md-6">
+              <label for="businessName" class="form-label">
+                BusinessName:<sup class="text-danger">*</sup></label
+              >
+            
+                <input
+                  type="text"
+                  class="form-control"
+                  id="businessName"
+                  formControlName="businessName"
+                />
+             
+            </div>
+
+            <div class="col-md-6">
+              <label for="typeOfBusiness" class="form-label">
+                TypeOfBusiness :<sup class="text-danger">*</sup>
+              </label>
+             
+                <input
+                  type="text"
+                  class="form-control"
+                  id="typeOfBusiness"
+                  formControlName="businessType"
+                />
+              </div>
+           
+          </div>
+
+          <div class="row col-md-12 m-1">
+            <div class="col-md-6">
+              <label for="email" class="form-label">
+                Email :<sup class="text-danger">*</sup>
+              </label>
+              <div class="col">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  formControlName="emailId"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="contactPersonName" class="form-label"
+                >ContactPersonName : <sup class="text-danger">*</sup></label
+              >
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactpersonName"
+                  formControlName="contactpersonName"
+                />
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row col-md-12 m-1">
+            <div class="col-md-6">
+              <label for="phoneNo" class="form-label">
+                PhoneNo :<sup class="text-danger">*</sup>
+              </label>
+              <div class="col">
+                <input
+                type="text"
+                class="form-control"
+                id="phoneNo"
+                formControlName="phoneNo"
+              />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="about" class="form-label"
+                >About : <sup class="text-danger">*</sup></label
+              >
+              <div class="col">
+                <input
+                type="text"
+                class="form-control"
+                id="about"
+                formControlName="about"
+              />
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row col-md-12 m-1">
+            <div class="col-md-6">
+              <label for="registrationDate" class="form-label">
+                RegistrationDate :<sup class="text-danger">*</sup>
+              </label>
+              <div class="col">
+                <input
+                type="text"
+                class="form-control"
+                id="registrationDate"
+                formControlName="registrationDate"
+              />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="Address" class="form-label"
+                >Address : <sup class="text-danger">*</sup></label
+              >
+              <div class="col">
+                <input
+                type="text"
+                class="form-control"
+                id="address"
+                formControlName="address"
+              />
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="row col-md-12 m-1">
+            <div class="col-md-6">
+              <label for="Password" class="form-label">
+                Password :<sup class="text-danger">*</sup>
+              </label>
+              <div class="col">
+                <input
+                type="password"
+                class="form-control"
+                id="password"
+                formControlName="password"
+              />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="Business Logo" class="form-label"
+                >BusinessLogo : <sup class="text-danger">*</sup></label
+              >
+              <div class="col">
+                <input 
+                type="file"
+                class="form-control"
+                id="businessLogo"
+                formControlName="logo"
+                (change)="onFileSave($event)"
+              />
+              <img *ngIf="logo1" [src]="getBase64Image(logo1)" alt="logo" height="100px" width="100px" />
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+          
+         
+          
+          <div class="inlineContainer col-12 row m-2">
+            <div class="label col-12 button">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="updateDetails()"
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+        </form>
+        <div class="powered-by">
+          Powered By
+          <a href="https://www.aptits.com/Home" target="_blank" rel="noreferrer"
+            >API IT Solutions</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</mat-dialog-content>
+
+
+
+
+

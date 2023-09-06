@@ -1,0 +1,61 @@
+<mat-toolbar style="height: 80px" class="fixed-toolbar">
+  <div class="container">
+    <h1 class="header">Admin Dashboard</h1>
+  </div>
+  <div class="right-items">
+    <span class="spacer"></span>
+
+    <button
+      style="
+        float: right;
+        background-color: #f7faf8;
+        color: rgb(10, 8, 8);
+        margin-right: 15px;
+        margin-top: 65px;
+        margin-top: -20px;
+        border-radius: 4px;
+        border-color: rgb(245, 11, 11);
+      "
+      (click)="logoutUser()"
+
+      mat-raised-button
+      
+    >
+      Logout
+    </button>
+
+    <br />
+  </div>
+  <mat-toolbar-row class="row">
+    <img src="\assets\images\aptitlogo.png" alt="Logo" class="logo-image" />
+
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side">
+    <br />
+    <br />
+    <mat-nav-list>
+      <br />
+      <br />
+      <div class="mat-nav-list">
+        <a [routerLink]="['../header/table']">Subscribers</a><br /><br />
+      </div>
+      <div class="mat-nav-list">
+        <a [routerLink]="['../header/card']">ActiveSubscribers</a><br /><br />
+      </div>
+      <div class="mat-nav-list">
+        <a [routerLink]="['../header/regist']">AddNewSubscriber</a><br /><br />
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 100vh; width: auto">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

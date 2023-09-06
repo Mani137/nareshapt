@@ -1,0 +1,414 @@
+<div class="card">
+  <div class="NewCard">
+    <ng-container *ngFor="let item of userDatalist; let i = index">
+      <div *ngIf="i === 0" class="item-containerLogo">
+        <div class="logo-container">
+          <img
+            [src]="'data:image/jpeg;base64,' + item.logofile"
+            alt="LogoImage"
+            class="LogoImage"
+          />
+        </div>
+        <div class="header-card">
+          <h1>{{ item.businessname }}</h1>
+        </div>
+      </div>
+    </ng-container>
+
+    <div class="cardfornotice">
+      <!-- <ng-container *ngFor="let item of userDatalist2"> -->
+      <div
+        class="marquee-container"
+        style="display: flex; justify-content: center"
+      >
+        <marquee
+          behavior="scroll"
+          direction="left"
+          style="font-size: 18px; padding-top: 10px"
+        >
+          {{ userDatalist2 }}
+        </marquee>
+      </div>
+    </div>
+
+    <div class="aboutedit popup-container" *ngIf="openaboutedit1">
+      <form [formGroup]="editabout" (ngSubmit)="onSubmitForm()">
+        <div>
+          <label for="textarea">About</label>
+          <textarea
+            class="form-control"
+            id="textarea"
+            formControlName="about"
+          ></textarea>
+          <br />
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="main">
+      <div class="overlay" *ngIf="showTypeNamePopup">
+        <div class="content">
+          <div class="close">&times;</div>
+          <form [formGroup]="addType">
+            <div class="form-group">
+              <div class="close-buttontypename" (click)="closeaddPopup()">
+                <i class="fas fa-times" style="font-size: 20px"></i>
+              </div>
+              <label id="labeltypename" for="typeName">Type Name</label>
+              <br />
+              <br />
+              <input
+                type="text"
+                class="form-control"
+                id="typeName"
+                formControlName="typeName"
+                [ngClass]="{
+                  'is-invalid':
+                    addType.get('typeName')?.invalid &&
+                    addType.get('typeName')?.touched
+                }"
+              />
+              <div
+                class="invalid-feedback"
+                *ngIf="addType.controls.typeName.errors?.['required']"
+              >
+                Type Name is required.
+              </div>
+              <div
+                class="invalid-feedback"
+                *ngIf="addType.controls.typeName.errors?.['numeric']"
+              >
+                Type Name should not start with numbers.
+              </div>
+              <div
+                class="invalid-feedback"
+                *ngIf="addType.controls.typeName.errors?.['whitespaceStart']"
+              >
+                Type Name should not start with whitespace.
+              </div>
+            </div>
+            <br />
+            <button
+              id="icon"
+              class="btn-primary mt-2"
+              (click)="addtypeNamebutton()"
+            >
+              ADD A TYPE
+            </button>
+          </form>
+        </div>
+      </div>
+      <div>
+        <div class="card NewCard">
+          <ng-container *ngFor="let item of userDatalist | unique : 'typeName'">
+            <ng-container *ngIf="!buttonExists(item.typeName)">
+              <div (click)="toggleList(item.typeid)" class="itemButtons">
+                {{ item.typeName }}
+              </div>
+              <div *ngIf="showList === item.typeid" class="items">
+                <div>
+                  <!-- Popup form for Adding New Item-->
+                  <div class="insideplus" class="overlay2" *ngIf="showPopup2">
+                    <div class="form-content">
+                      <form [formGroup]="addItem" (ngSubmit)="closePopup2()">
+                        <div class="close-button" (click)="closeaddPopup2()">
+                          <i class="fas fa-times" style="font-size: 24px"></i>
+                        </div>
+
+                        <div class="itemslist">
+                          <div >
+                            <label for="itemName">Item Name:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="itemName"
+                              formControlName="itemName"
+                              [ngClass]="{
+                                'ng-invalid':
+                                  addItem.controls.itemName.touched &&
+                                  addItem.controls.itemName.invalid
+                              }"
+                            />
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                addItem.controls.itemName.touched &&
+                                addItem.controls.itemName.invalid
+                              "
+                            >
+                              Item Name is required.
+                            </div>
+                          </div>
+                          <div>
+                            <label for="itemImage">Item Image:</label>
+                            <input
+                              type="file"
+                              class="form-control"
+                              id="itemImage"
+                              formControlName="itemImage"
+                              (change)="saveItemImage($event)"
+                              [ngClass]="{
+                                'ng-invalid':
+                                  addItem.controls.itemImage.touched &&
+                                  addItem.controls.itemImage.invalid
+                              }"
+                            />
+                            <div
+                              class="error-message"
+                              *ngIf="
+                                addItem.controls.itemImage.touched &&
+                                addItem.controls.itemImage.invalid
+                              "
+                            >
+                              Item Image is required.
+                            </div>
+                          </div>
+                          <div>
+                            <label for="itemDescription"
+                              >Item Description:</label
+                            >
+                            <textarea
+                              class="form-control"
+                              id="itemDescription"
+                              formControlName="description"
+                              [ngClass]="{
+                                'ng-invalid':
+                                  addItem.controls.description.touched &&
+                                  addItem.controls.description.invalid
+                              }"
+                            ></textarea>
+                            <div
+                              class="error-message"
+                              *ngIf="addItem.controls.description.errors?.['required'] && addItem.controls.description.touched"
+                            >
+                              Item Description is required.
+                            </div>
+                            <div
+                              class="error-message"
+                              *ngIf="addItem.controls.description.errors?.['maxlength'] && addItem.controls.description.touched"
+                            >
+                              Item Description must be less than or equal to 50
+                              characters.
+                            </div>
+                          </div>
+                          <div>
+                            <label for="itemPrice">Item Price:</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="Price"
+                              formControlName="price"
+                              [ngClass]="{
+                                'ng-invalid':
+                                  addItem.controls.price.touched &&
+                                  addItem.controls.price.invalid
+                              }"
+                            />
+                            <div
+                              class="error-message"
+                              *ngIf="addItem.controls.price.errors?.['required'] && addItem.controls.price.touched"
+                            >
+                              Item Price is required.
+                            </div>
+                            <div
+                              class="error-message"
+                              *ngIf="addItem.controls.price.errors?.['pattern'] && addItem.controls.price.touched"
+                            >
+                              Item Price must contain only numbers.
+                            </div>
+                          </div>
+                        </div>
+                        <button
+                          class="addItembutton"
+                          type="submit"
+                          [disabled]="addItem.invalid"
+                          (click)="addItems()"
+                        >
+                          ADD ITEM
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!-- Popup form for Updating -->
+                <div
+                  class="card popup-form"
+                  class="overlay2"
+                  *ngIf="showPopup3"
+                >
+                  <div class="form-content">
+                    <div class="close-button" (click)="closeupdatePopup3()">
+                      <i class="fas fa-times" style="font-size: 28px"></i>
+                    </div>
+                    <label>Update This Item</label>
+                    <form [formGroup]="editItem">
+                      <div>
+                        <label for="itemName">Item Name:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="itemName"
+                          formControlName="itemName"
+                        />
+                        <div
+                          *ngIf="
+                            editItem.controls.itemName.errors &&
+                            editItem.controls.itemName.touched
+                          "
+                        >
+                          <p class="error-message">Item Name is required.</p>
+                        </div>
+                      </div>
+                      <div>
+                        <label for="itemImage">Item Image:</label>
+                        <input
+                          type="file"
+                          class="form-control imagefile"
+                          id="itemImage"
+                          formControlName="itemImage"
+                          (change)="editItemImage($event)"
+                          [ngClass]="{
+                            'ng-invalid':
+                              editItem.controls.itemImage.touched &&
+                              editItem.controls.itemImage.invalid
+                          }"
+                        />
+                        <div
+                          class="error-message"
+                          *ngIf="
+                            editItem.controls.itemImage.touched &&
+                            editItem.controls.itemImage.invalid
+                          "
+                        >
+                          Item Image is required.
+                        </div>
+                      </div>
+                      <div
+                        *ngIf="editImageItem"
+                        style="
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                        "
+                      >
+                        <img
+                          [src]="editImageItem"
+                          alt="Item Image"
+                          class="item-get-image"
+                          style="max-width: 200px; max-height: 150px"
+                        />
+                      </div>
+                      <div>
+                        <label for="itemDescription">Item Description:</label>
+                        <textarea
+                          class="form-control"
+                          id="itemDescription"
+                          formControlName="description"
+                          [ngClass]="{
+                            'ng-invalid':
+                              editItem.controls.description.touched &&
+                              editItem.controls.description.invalid
+                          }"
+                        ></textarea>
+                        <div
+                          class="error-message"
+                          *ngIf="editItem.controls.description.errors?.['required'] && editItem.controls.description.touched"
+                        >
+                          Item Description is required.
+                        </div>
+                        <div
+                          class="error-message"
+                          *ngIf="editItem.controls.description.errors?.['maxlength'] && editItem.controls.description.touched"
+                        >
+                          Item Description must be less than or equal to 50
+                          characters.
+                        </div>
+                      </div>
+                      <div>
+                        <label for="itemPrice">Item Price:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="itemPrice"
+                          formControlName="price"
+                          [ngClass]="{
+                            'ng-invalid':
+                              editItem.controls.price.touched &&
+                              editItem.controls.price.invalid
+                          }"
+                        />
+                        <div
+                          class="error-message"
+                          *ngIf="editItem.controls.price.errors?.['required'] && editItem.controls.price.touched"
+                        >
+                          Item Price is required.
+                        </div>
+                        <div
+                          class="error-message"
+                          *ngIf="editItem.controls.price.errors?.['pattern'] && editItem.controls.price.touched"
+                        >
+                          Item Price must contain only numbers.
+                        </div>
+                      </div>
+                      <button class="updatebutton" (click)="updateItembutton()">
+                        Update ITEM
+                      </button>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="row" id="color">
+                  <div
+                    class="col-md-6 mb-3"
+                    *ngFor="let filteredItem of getFilteredItems(item.typeid)"
+                  >
+                    <div class="card" style="max-width: 540px">
+                      <div class="row no-gutters" id="gettinglist">
+                        <div class="col-md-8">
+                          <div class="card-body">
+                            <p class="card-title">
+                              Item Name: {{ filteredItem.itemName }}
+                            </p>
+                            <p class="card-text">
+                              Description: {{ filteredItem.description }}
+                            </p>
+                            <p class="card-text">
+                              Price:&#8377; {{ filteredItem.price }}
+                            </p>
+                            <div class="button-container"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <img
+                            [src]="
+                              'data:image/jpeg;base64,' + filteredItem.itemimage
+                            "
+                            class="card-img"
+                            alt="Item Image"
+                          />
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="powered-by">
+    Powered By
+    <a href="https://www.aptits.com/Home" target="_blank" rel="noreferrer"
+      >API IT Solutions</a
+    >
+  </div>
+
+  <div class="containerlogo">
+    <img src="\assets\images\aptitlogo.png" alt="Logo" class="logo-image" />
+  </div>
+</div>

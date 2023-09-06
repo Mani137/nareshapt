@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  margin: 0.2em;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  box-shadow: 0 0 5px rgba(12, 11, 11, 0.2);
+  background-color: rgb(247, 245, 245);
+}
+
+
+/* styles.css */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.parent-div {
+  width: 100vw;
+  height: 100vh;
+}
+
+.powered-by {
+  text-align: center;
+}
+
+.powered-by a {
+  text-decoration: none;
+}
+
+.containerlogo {
+  text-align: center;
+}
+
+.logo-image {
+  width: 80px;
+  height: auto;
+}
+
+.background-image {
+  position: relative;
+}
+.image {
+  position: fixed;
+  height: 100vh;
+}
+
+.smallContainer {
+  width: auto;
+  padding-right: 20px;
+}
+
+.candi{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 15px; /* Font size */
+  font-weight: bold; /* Font weight */
+}

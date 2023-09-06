@@ -1,0 +1,32 @@
+export const environment = {
+    production: false,
+    apiRoot: 'http://localhost:8085', // Replace this with your actual API root URL
+    url2: "http://localhost:8085/my/count",
+    loginreq: 'http://localhost:8085/my/login',
+    protectedata: 'http://localhost:8085/my/protected-data',
+    saveTypeUrl: 'http://localhost:8085/my/create/',
+    menugetUrl: 'http://localhost:8085/my/gett/',
+    menueditUrl: 'http://localhost:8085/my/',
+    getabout: 'http://localhost:8085/my/find/',
+    updateUrl: 'http://localhost:8085/my/update/',
+    updateabout: 'http://localhost:8085/my/about/',
+    getTypeNames: 'http://localhost:8085/my/gett/',
+    menuurl1: 'http://localhost:8085/my/typeid/',
+    menuapiUrl: 'http://localhost:8085/my/',
+    editDetailsurl2: 'http://localhost:8085/my/update',
+    editDetailsurl3: 'http://localhost:8085/my/typeupdate',
+    Tableurl: 'http://localhost:8085/my/findall',
+    Tableurl1: 'http://localhost:8085/my/find/',
+    TableDeleteUrl: 'http://localhost:8085/my/deletebusiness/',
+    viewsaveTypeUrl: 'http://localhost:8085/my/create/',
+    viewgetUrl: 'http://localhost:8085/my/gett/',
+    vieweditUrl: 'http://localhost:8085/my/',
+    viewgetabout: 'http://localhost:8085/my/find/',
+    viewupdateUrl: 'http://localhost:8085/my/update/',
+    viewupdateabput: 'http://localhost:8085/my/updateAbout/',
+    viewgetTypeNames: 'http://localhost:8085/my/gett/',
+    viewurl1: 'http://localhost:8085/my/typeid/',
+    viewapiUrl: 'http://localhost:8085/my/',
+    saveImageUrl:'http://localhost:8085/api/view/save/'
+
+};

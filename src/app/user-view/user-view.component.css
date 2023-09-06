@@ -1,0 +1,787 @@
+.card {
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  padding: 10px;
+  /* background-color: #fff; */
+  /* box-shadow: 0 2px 4px ; */
+  /* background-image: url('../../assets/images/blur-restaurant.png'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* background: linear-gradient(45deg, rgb(152, 137, 116),rgb(196, 190, 235), rgb(122, 127, 136));  */
+  background-image: url(./../../assets/images/gold-pattern.jpg);
+  /* background-image: url(./../../../assets/images/gold-pattern.jpg); */
+
+}
+.discount-notice {
+  background-color: orange; /* Background color */
+  color: #ffffff; /* Text color */
+  padding: 5px; /* Padding */
+  font-size: 24px; /* Font size */
+  font-weight: bold; /* Font weight */
+  /* Add any additional styles as needed */
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.col-md-3 {
+  margin-top: 30px;
+  background-color: white;
+}
+.button {
+  margin-bottom: 20px;
+  align-content: center;
+  font-size: 30px;
+}
+.main {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+button {
+  background-color: orange;
+  color: #614646;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+button:hover {
+  background-color: green;
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu-list div {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  width: 80%;
+  max-width: 600px;
+}
+.menu-list h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.item-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  width: 100%;
+}
+.item-container h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.item-container p {
+  margin: 0;
+}
+.menu-list p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .menu-list div {
+    width: 90%;
+  }
+}
+
+.item-image {
+  object-fit: cover;
+  width: 130px;
+  height: 130px;
+  border-radius: 6px;
+}
+.item-details {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  margin-top: 10px;
+  width: 100%;
+}
+.col-md-2 {
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background-color: transparent;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  text-align: center;
+}
+.logo-image {
+  max-width: 100%;
+  height: auto;
+}
+.additemplus-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.additemplus-icon i {
+  color: white;
+  font-size: 24px;
+}
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .additemplus-icon {
+    margin-left: 10px; /* Adjust the margin-left for smaller screens */
+  }
+  .additemplus-icon i {
+    font-size: 20px; /* Adjust the font size for smaller screens */
+  }
+}
+@media (max-width: 576px) {
+  .additemplus-icon {
+    margin-left: 2%; /* Further adjust the margin-left for even smaller screens */
+  }
+  .additemplus-icon i {
+    font-size: 18px; /* Further adjust the font size for even smaller screens */
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.content {
+  background-color: rgb(163, 167, 163);
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.close {
+  /* Styles for the close button */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+#itemcol {
+  margin-top: 60px;
+}
+
+.item-details {
+  position: relative;
+}
+
+.delete-button {
+  position: absolute;
+  bottom: 60px;
+  right: 150px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+@media (max-width: 320px) {
+  .delete-button {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+@media (min-width: 321px) and (max-width: 375px) {
+  .delete-button {
+    bottom: 30px;
+    right: 30px;
+  }
+}
+@media (min-width: 376px) and (max-width: 414px) {
+  .delete-button {
+    bottom: 40px;
+    right: 40px;
+  }
+}
+@media (min-width: 415px) and (max-width: 480px) {
+  .delete-button {
+    bottom: 50px;
+    right: 50px;
+  }
+}
+
+.delete-button i {
+  color: red;
+  font-size: 24px; /* Adjust the font size as needed */
+}
+.ADD-text {
+  display: none;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  padding: -20px;
+  color: red;
+}
+.plus-icon:hover .delete-text {
+  display: block;
+}
+
+.popup-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+}
+.popup-form .form-content {
+  background-color: pink;
+  padding: 20px;
+}
+
+.overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+  cursor: pointer;
+}
+.btn i {
+  margin-right: 5px;
+}
+.btn:hover {
+  background-color: #23527c;
+}
+.btn:focus {
+  outline: none;
+}
+/* Adjust the button size and colors as needed */
+
+.notice-marquee marquee {
+  display: inline-block;
+  animation: marquee-animation 50s linear infinite;
+}
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.background-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.NewCard {
+  background-color: transparent;
+}
+.inside {
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.insideplus {
+  width: 300px;
+  /* background-color: green; */
+  /* background-image: url(./../../assets/images/green1.jpg); */
+
+  border-radius: 8px;
+  padding: 20px;
+}
+.insideplus label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.insideplus input[type="text"],
+.insideplus textarea,
+.insideplus input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.insideplus button {
+  display: block;
+  width: 100%;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+}
+.insideplus button:hover {
+  background-color: #0056b3;
+}
+.overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+.error-text {
+  font-size: 12px;
+}
+.updatebutton {
+  background-color: #80a0b3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 20px;
+  margin-left: 130px;
+  height: 45px;
+}
+.updatebutton:hover {
+  background-color: #0069d9;
+}
+
+.LogoImage {
+  width: 100%; /* Set the width to 100% to ensure it scales properly */
+  height: auto; /* Maintain the aspect ratio while scaling */
+  object-fit: contain; /* Use 'contain' to fit the entire image within the container */
+  max-width: 200px; /* Set a maximum width for the image */
+  margin-left: 30px; /* Add a left margin for spacing */
+  margin-right: 30px; /* Add a right margin for spacing */
+}
+
+.item-containerLogo {
+  display: flex;
+  align-items: center; /* vertically center the content */
+}
+
+@media (max-width: 576px) {
+  .plus-icon {
+    margin-left: 2%; /* Further adjust the margin-left for even smaller screens */
+  }
+  .plus-icon i {
+    font-size: 18px; /* Further adjust the font size for even smaller screens */
+  }
+}
+/* Add more media queries as needed for different screen sizes */
+/* Example of additional media query for 320px screen width */
+@media (max-width: 320px) {
+  .delete-button {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+/* Example of additional media query for 321px to 375px screen width */
+@media (min-width: 321px) and (max-width: 375px) {
+  .delete-button {
+    bottom: 30px;
+    right: 30px;
+  }
+}
+/* Example of additional media query for 376px to 414px screen width */
+@media (min-width: 376px) and (max-width: 414px) {
+  .delete-button {
+    bottom: 40px;
+    right: 40px;
+  }
+}
+/* Example of additional media query for 415px to 480px screen width */
+@media (min-width: 415px) and (max-width: 480px) {
+  .delete-button {
+    bottom: 50px;
+    right: 50px;
+  }
+}
+.itemButtons {
+  height: 50px;
+  background-image: url(./../../assets/blue-pattern.jpg);
+  /* background-image: url(./../../assets/images/green1.jpg); */
+background-position: center;
+background-size: cover;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 10px;
+  text-shadow: #23527c;
+  font-size: large;
+  color: white;
+}
+.addtypebutton {
+  /* float: right; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  cursor: pointer;
+  margin-left: px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .addtypebutton {
+    margin-left: auto; /* Reset the margin-left */
+    margin-right: auto; /* Center the button horizontally */
+  }
+}
+@media (max-width: 576px) {
+  .addtypebutton {
+    width: auto; /* Make the button full-width */
+    margin-left: 0; /* Reset the margin-left */
+    margin-right: 0; /* Reset the margin-right */
+    border-radius: 0; /* Remove the border radius */
+  }
+}
+
+.update-delete {
+  margin-left: 90%;
+}
+.a {
+  margin-bottom: 20%;
+}
+
+.col-md-1 {
+  flex: 0 0 auto;
+  width: 8.33333333%;
+  padding: 25px;
+  margin-top: 30px;
+}
+.addtypebutton:hover {
+  background-color: powderblue;
+  color: white;
+}
+.plus-icon:hover {
+  background-color: powderblue;
+  color: white;
+}
+#itemtext {
+  margin-right: 0px;
+}
+
+#deleteicon:hover {
+  /* Add your desired hover styles here */
+  /* For example, change the color */
+  color: red;
+  /* Or add a background color */
+  background-color: #eee;
+  /* Or add a box shadow */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  /* Add any other styles you want to apply on hover */
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  #deleteicon {
+    margin-left: 0px;
+    color: red;
+  }
+
+  @media screen and (max-width: 700px) {
+    #editicon {
+      color: #0069d9;
+    }
+  }
+  .col-md-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+    padding: 30px;
+  }
+  #editicon:hover {
+    margin-left: 10px;
+    color: blue;
+    /* Or add a scale transformation */
+    transform: scale(1.2);
+  }
+
+  .item-image {
+    width: 118px;
+    height: 100%;
+    margin-right: 15px;
+    border-radius: 10px;
+  }
+}
+.close-button {
+  height: 20px;
+  margin-left: 350px;
+  color: red;
+}
+.close-buttontypename {
+  height: 20px;
+  margin-left: 250px;
+  color: red;
+  cursor: pointer;
+}
+.close-button:hover {
+  background-color: #eaeaea;
+}
+
+.addItembutton {
+  margin-left: 120px;
+  margin-top: 20px;
+}
+.addtypebutton i {
+  margin-left: 15px;
+}
+.addnewitem i {
+  margin-left: 15px;
+}
+.addnewitem:hover {
+  display: block;
+}
+.cardfornotice {
+  height: 50px;
+  background: linear-gradient(45deg,rgb(247, 168, 103), rgb(6, 196, 69), rgb(236, 76, 13));
+  margin: 3px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 10px;
+  text-shadow: #23527c;
+  font-size: large;
+  color: rgb(14, 12, 12);
+  padding-left: 20px;
+}
+.marquee-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  margin-left: 10px;
+  margin-right: 0px;
+  padding-bottom: 15px;
+  overflow: hidden;
+}
+#editicon:hover {
+  color: #0069d9;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+#icon {
+  color: white;
+}
+
+#labeltypename {
+  display: inline-block;
+  font-size: 20px;
+}
+
+#marqueeedit {
+  margin-right: px;
+  color: blue;
+}
+
+.popup-open {
+  overflow: hidden;
+  position: relative;
+}
+
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  background-color: #fff;
+  padding: 20px;
+  background-color: rgb(163, 167, 163);
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.button-container {
+  display: flex;
+}
+
+.button {
+  margin-right: 80px; /* Adjust the spacing between buttons if needed */
+}
+.fa-trash-alt,
+.fa-pencil-alt {
+  font-size: 30px; /* Adjust the font size to make the icons smaller */
+}
+
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  /* Adjustments for mobile devices */
+  @media (max-width: 767px) {
+    align-items: flex-start;
+    padding-top: 50px;
+  }
+}
+
+.form-content {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 4px;
+  /* Adjustments for mobile devices */
+  @media (max-width: 767px) {
+    max-width: 90%;
+    padding: 20px;
+  }
+}
+
+.addnewitem {
+  width: 500px;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+.item-containerLogo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  flex: 0 0 auto; /* prevent the logo from growing or shrinking */
+  margin-right: 10px; /* adjust as needed */
+
+}
+/* 
+  .logo-image {
+    width: 50px; 
+    height: 50px;
+  }  */
+
+  .col-md-6 mb-3{
+    width:50px;
+    height:50px;
+  }
+  .header-card {
+    flex: 1; /* allow the header to take remaining horizontal space */
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+  }
+
+.header-card h1 {
+  font-size: 25px;
+  margin: 0;
+  color: #f7f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LogoImage {
+  width: 146px; /* adjust the width of the logo image */
+  height: auto; /* maintain aspect ratio */
+  object-fit: cover;
+}
+
+.card {
+  background-color: #111011;
+  color: white;
+  font-size: 15px;
+}
+
+/* .fit-image{
+    max-width: 200px;
+    max-height: 200px;
+  } */
+
+.card-img,
+.card-img-bottom,
+.card-img-top {
+  padding: auto !important;
+  margin: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  
+
+}
+
+.containerlogo {
+  text-align: center;
+}
+
+.logo-image {
+  width: 80px;
+  height: auto;
+}
+
+.powered-by {
+  text-align: center;
+}
+
+.powered-by a {
+  text-decoration: none;
+}
+
+#gettinglist {
+  /* background-image: url(./../../../src/assets/images/blackflowerpattern.jpg); */
+
+  background-position: center;
+  background-size: cover;
+  background-color: rgb(238, 243, 248);
+  color: #614646;
+}
